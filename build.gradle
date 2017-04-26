@@ -1,0 +1,33 @@
+allprojects {
+    repositories {
+        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+    }
+}
+
+group 'com.liwei'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.4.2.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-cache', version: '1.4.2.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '1.4.2.RELEASE'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.40'
+    // 缓存策略（1）
+    // compile group: 'net.sf.ehcache', name: 'ehcache', version: '2.10.3'
+
+    // 缓存策略（2）
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-redis', version: '1.4.2.RELEASE'
+
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.2.RELEASE'
+}
