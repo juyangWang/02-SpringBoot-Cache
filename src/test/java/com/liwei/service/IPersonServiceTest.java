@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.*;
-
 /**
  * Created by liwei on 17/4/26.
  */
@@ -52,9 +50,8 @@ public class IPersonServiceTest {
     @Test
     public void testCacheAble(){
         Person person = new Person();
-        person.setId(9L);
-        Person result =
-                personService.findOne(person);
+        person.setId(3L);
+        Person result = personService.findOne(person);
         System.out.println(result);
     }
 

@@ -1,5 +1,10 @@
 # Spring Boot 使用最最简单的缓存的例子（使用内存）
 
+
+特别注意：使用 Guava 测试的时候，应该启动 Spring Boot 的容器。
+如果使用单元测试的话，应该在单元测试中连续查询两次。
+
+
 启动本地 Redis 的命令
 ```java
 redis-server ~/myconf/redis.conf
@@ -89,7 +94,3 @@ java.lang.IllegalArgumentException: DefaultSerializer requires a Serializable pa
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.6.jar:8.5.6]
 	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_45]
 ```
-
-参考资料：
-Spring Cache抽象详解
-http://jinnianshilongnian.iteye.com/blog/2001040
